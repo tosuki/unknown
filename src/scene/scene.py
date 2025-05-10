@@ -1,4 +1,3 @@
-from src.entity.player import Player
 from src.drawer import Drawer
 
 class Scene:
