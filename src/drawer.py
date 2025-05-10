@@ -10,9 +10,11 @@ class Drawer:
         ), 1)
 
     def draw_rectangle(ctx, drawable):
+        x, y = ctx.get_position(drawable.x, drawable.y)
+
         pygame.draw.rect(ctx.surface, drawable.color, pygame.Rect(
-            drawable.x,
-            drawable.y,
+            x,
+            y,
             drawable.width,
             drawable.height
         ))

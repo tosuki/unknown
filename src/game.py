@@ -3,19 +3,23 @@ from pygame.locals import *
 
 from src.drawer import Drawer
 from src.ctx import GameContext
+
 from src.window import Window
+from src.frame import Frame
 
 from src.entity.player import Player
 
 class Game():
     def __init__(self):
         self.window = Window(800, 800)
-        self.ctx = GameContext(self.window)
+        self.frame = Frame(10, 10)
+        self.ctx = GameContext(self.window, self.frame)
 
         self.entities = [Player(25, 25)]
 
     def on_tick(self):
         Drawer.clear(self.ctx, self.window)
+        Drawer.draw(self.ctx, self.frame)
 
         for entity in self.entities:
             Drawer.draw(self.ctx, entity)
