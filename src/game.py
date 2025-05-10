@@ -7,7 +7,7 @@ from src.ctx import GameContext
 from src.window import Window
 from src.frame import Frame
 
-from src.entity.player import Player
+from src.scene.menu import MenuScene
 
 class Game():
     def __init__(self):
@@ -15,15 +15,28 @@ class Game():
         self.frame = Frame(10, 10)
         self.ctx = GameContext(self.window, self.frame)
 
-        self.entities = [Player(25, 25)]
+        self.scenes = [MenuScene]
+        self.current_scene = 0
+
+    def next_scene(self):
+        if len(self.scenes) > self.current_scene + 1:
+            return
+        self.current_scene = self.current_scene + 1 
+
+    def has_scene(self):
+        return len(self.scenes) > self.current_scene
+
+    def get_scene(self):
+        return self.scenes[self.current_scene]
 
     def on_tick(self):
         Drawer.clear(self.ctx, self.window)
         Drawer.draw(self.ctx, self.frame)
 
-        for entity in self.entities:
-            Drawer.draw(self.ctx, entity)
-            entity.on_tick(self)
+        if self.has_scene():
+            scene = self.get_scene
+            print(scene)
+            
 
         for event in pygame.event.get():
             if event.type == QUIT:

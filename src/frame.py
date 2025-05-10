@@ -6,6 +6,7 @@ class Frame(Drawable):
 
     def get_x(self, x):
         return self.x + x
+    
     def get_y(self, y):
         return self.y + y
 
