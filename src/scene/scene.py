@@ -7,5 +7,5 @@ class Scene:
 
     def init(self, game):
         for entity in self.entities:
-            entity.on_tick(self, game)
+            entity.on_tick(game)
             Drawer.draw(game.ctx, entity)

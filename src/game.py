@@ -15,7 +15,7 @@ class Game():
         self.frame = Frame(10, 10)
         self.ctx = GameContext(self.window, self.frame)
 
-        self.scenes = [MenuScene]
+        self.scenes = [MenuScene()]
         self.current_scene = 0
 
     def next_scene(self):
@@ -34,8 +34,8 @@ class Game():
         Drawer.draw(self.ctx, self.frame)
 
         if self.has_scene():
-            scene = self.get_scene
-            print(scene)
+            scene = self.get_scene()
+            scene.init(self)
             
 
         for event in pygame.event.get():
