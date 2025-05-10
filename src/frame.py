@@ -1,15 +1,8 @@
-from src.window import Window
+from src.drawer import Drawable
 
-class Frame(Window):
-    def __init__(self, width, height, x, y):
-        super().__init__(width, height)
-        self.x = x
-        self.y = y
+class Frame(Drawable):
+    def __init__(self, x, y):
+        super().__init__(x, y, (155, 200, 100), 400, 400)
 
-    def parse_coordinates(self, x, y):
-        return (self.parse_x(x), self.parse_y(y))
-
-    def parse_x(self, x):
-        return self.x + x
-    def parse_y(self, y):
-        return self.y + y
+    def draw(self, ctx, drawer):
+        return drawer.draw_frame(ctx, self)

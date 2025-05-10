@@ -1,17 +1,26 @@
 import pygame
 from pygame.locals import *
 
+from src.drawer import Drawer
 from src.ctx import GameContext
 from src.window import Window
-from src.frame import Frame
+
+from src.entity.player import Player
 
 class Game():
     def __init__(self):
         self.window = Window(800, 800)
-        self.frame = Frame(400, 400, 10, 10)
         self.ctx = GameContext(self.window)
 
+        self.entities = [Player(25, 25)]
+
     def on_tick(self):
+        Drawer.clear(self.ctx, self.window)
+
+        for entity in self.entities:
+            Drawer.draw(self.ctx, entity)
+            entity.on_tick(self)
+
         for event in pygame.event.get():
             if event.type == QUIT:
                 self.ctx.close()
