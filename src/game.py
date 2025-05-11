@@ -29,6 +29,9 @@ class Game():
     def get_scene(self):
         return self.scenes[self.current_scene]
 
+    def on_close(self):
+        self.ctx.close()
+
     def on_tick(self):
         Drawer.clear(self.ctx, self.window)
         Drawer.draw(self.ctx, self.frame)
@@ -36,11 +39,6 @@ class Game():
         if self.has_scene():
             scene = self.get_scene()
             scene.init(self)
-            
-
-        for event in pygame.event.get():
-            if event.type == QUIT:
-                self.ctx.close()
 
     def start(self):
         self.ctx.start()

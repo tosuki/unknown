@@ -1,16 +1,13 @@
 from src.drawer import Drawable
 
-class EntityAttributes:
-    def __init__(self, health, speed):
-        self.health = health
-        self.speed = speed
-
 class Entity(Drawable):
-    def __init__(self, x, y, attributes):
-        super().__init__(x, y, (155, 155, 155), 40, 40)
-        self.attributes = attributes
+    def __init__(self, x, y, color, width, height):
+        super().__init__(x, y, color, width, height)
 
     def on_tick(self, game):
+        pass
+
+    def on_mouse_button_down(self, game, e):
         pass
 
     def draw(self, ctx, drawer):

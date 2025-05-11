@@ -9,6 +9,19 @@ class Drawer:
             drawable.height
         ), 1)
 
+    def draw_text(ctx, text: str, foreground, x, y):
+        if not ctx.is_font_initialized():
+            print("Initializing font!")
+            ctx.load_font()
+            return
+    
+        text_surface = ctx.font.render(text, True, foreground)
+        ctx.surface.blit(text_surface, (x, y))
+
+    def draw_button(ctx, button):
+        Drawer.draw_rectangle(ctx, button)
+        Drawer.draw_text(ctx, button.text, button.text_color, button.x + 20, button.y + button.height /2)
+
     def draw_rectangle(ctx, drawable):
         x, y = ctx.get_position(drawable.x, drawable.y)
 

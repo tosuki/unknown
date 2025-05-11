@@ -1,9 +1,30 @@
 from src.scene.scene import Scene
 
-from src.entity.player import Player
+from src.entity.button import Button
 
 class MenuScene(Scene):
     def __init__(self):
         super().__init__([
-            Player(10, 10)
+            Button(
+                text="start",
+                x = 100,
+                y = 200,
+                width = 200,
+                color = (255, 255, 255),
+                text_color = (0, 0, 0),
+                height = 40,
+                onclick = lambda game:
+                    print("começando joguinho")
+            ),
+            Button(
+                text="exit",
+                x = 100,
+                y = 260,
+                width = 200,
+                color = (255, 255, 255),
+                text_color = (0, 0, 0),
+                height = 40,
+                onclick = lambda game:
+                    print("sai carai")
+            )
         ])
