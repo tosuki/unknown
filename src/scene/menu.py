@@ -25,6 +25,6 @@ class MenuScene(Scene):
                 text_color = (0, 0, 0),
                 height = 40,
                 onclick = lambda game:
-                    print("sai carai")
+                    game.ctx.close()
             )
         ])

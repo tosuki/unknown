@@ -23,10 +23,13 @@ class Game():
         self.current_scene = 0
 
     def next_scene(self):
-        print("There is no next scene: {ni}: {length}".format(ni=self.current_scene+1, length=len(self.scenes)))
         if len(self.scenes) <= self.current_scene + 1:
             return
         self.current_scene = self.current_scene + 1 
+
+    def previous_scene(self):
+        if self.current_scene > 0:
+            self.current_scene = self.current_scene - 1
 
     def has_scene(self):
         return len(self.scenes) > self.current_scene

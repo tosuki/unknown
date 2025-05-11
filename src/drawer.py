@@ -55,5 +55,5 @@ class Drawable:
     def on_tick(self, game):
         pass
 
-    def draw(self, drawer: Drawer):
+    def draw(self, ctx, drawer: Drawer):
         pass
