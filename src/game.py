@@ -9,6 +9,7 @@ from src.frame import Frame
 
 from src.scene.menu import MenuScene
 from src.scene.introduction import IntroductionScene
+from src.scene.first_stage import FirstStageScene
 
 class Game():
     def __init__(self):
@@ -18,7 +19,8 @@ class Game():
 
         self.scenes = [
             MenuScene(),
-            IntroductionScene()
+            IntroductionScene(),
+            FirstStageScene()
         ]
         self.current_scene = 0
 

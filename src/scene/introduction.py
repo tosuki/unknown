@@ -14,7 +14,7 @@ class IntroductionScene(Scene):
                 text_color=(255, 255, 255)
             ),
             Button(
-                text="Previous",
+                text="next",
                 x = 10,
                 y = 250,
                 color=(255, 255, 255),
@@ -22,6 +22,6 @@ class IntroductionScene(Scene):
                 width=250,
                 height=40,
                 onclick=lambda game:
-                    game.previous_scene()
+                    game.next_scene()
             )
         ])
