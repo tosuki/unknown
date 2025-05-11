@@ -8,6 +8,7 @@ from src.window import Window
 from src.frame import Frame
 
 from src.scene.menu import MenuScene
+from src.scene.introduction import IntroductionScene
 
 class Game():
     def __init__(self):
@@ -15,11 +16,15 @@ class Game():
         self.frame = Frame(10, 10)
         self.ctx = GameContext(self.window, self.frame)
 
-        self.scenes = [MenuScene()]
+        self.scenes = [
+            MenuScene(),
+            IntroductionScene()
+        ]
         self.current_scene = 0
 
     def next_scene(self):
-        if len(self.scenes) > self.current_scene + 1:
+        print("There is no next scene: {ni}: {length}".format(ni=self.current_scene+1, length=len(self.scenes)))
+        if len(self.scenes) <= self.current_scene + 1:
             return
         self.current_scene = self.current_scene + 1 
 

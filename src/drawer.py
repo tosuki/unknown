@@ -14,9 +14,10 @@ class Drawer:
             print("Initializing font!")
             ctx.load_font()
             return
-    
+
+        tx, ty = ctx.get_position(x, y)    
         text_surface = ctx.font.render(text, True, foreground)
-        ctx.surface.blit(text_surface, (x, y))
+        ctx.surface.blit(text_surface, (tx, ty))
 
     def draw_button(ctx, button):
         Drawer.draw_rectangle(ctx, button)
@@ -50,6 +51,9 @@ class Drawable:
         self.color = color
         self.width = width
         self.height = height
+
+    def on_tick(self, game):
+        pass
 
     def draw(self, drawer: Drawer):
         pass

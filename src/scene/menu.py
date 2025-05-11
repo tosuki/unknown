@@ -14,7 +14,7 @@ class MenuScene(Scene):
                 text_color = (0, 0, 0),
                 height = 40,
                 onclick = lambda game:
-                    print("começando joguinho")
+                    game.next_scene()
             ),
             Button(
                 text="exit",
