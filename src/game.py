@@ -12,9 +12,13 @@ from src.scene.introduction import IntroductionScene
 from src.scene.first_stage import FirstStageScene
 
 class Game():
-    def __init__(self):
-        self.window = Window(800, 800)
-        self.frame = Frame(10, 10)
+    def __init__(
+            self,
+            window = Window(800, 800),
+            frame = Frame(10, 10)
+    ):
+        self.window = window
+        self.frame = frame
         self.ctx = GameContext(self.window, self.frame)
 
         self.scenes = [

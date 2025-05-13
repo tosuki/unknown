@@ -1,8 +1,15 @@
 from src.drawer import Drawable
 
 class Frame(Drawable):
-    def __init__(self, x, y):
-        super().__init__(x, y, (155, 200, 100), 400, 400)
+    def __init__(
+        self,
+        x,
+        y,
+        width = 400,
+        height = 400,
+        color = (155, 200, 100)
+    ):
+        super().__init__(x, y, color, width, height)
 
     def get_x(self, x):
         return self.x + x
