@@ -9,6 +9,9 @@ class Drawer:
             drawable.height
         ), 1)
 
+    def draw_image(ctx, drawable):
+        pass
+
     def draw_text(ctx, text: str, foreground, x, y):
         if not ctx.is_font_initialized():
             print("Initializing font!")

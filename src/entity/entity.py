@@ -16,3 +16,11 @@ class Entity(Drawable):
 
     def draw(self, ctx, drawer):
         return drawer.draw_rectangle(ctx, self)
+    
+class ImageEntity(Entity):
+    def __init__(self, sprites, x, y, color, width, height):
+        super().__init__(x, y, color, width, height)
+        self.sprites = sprites
+
+    def draw(self, ctx, drawer):
+        return drawer.draw_image(ctx, self)
