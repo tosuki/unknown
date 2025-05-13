@@ -4,6 +4,10 @@ class Entity(Drawable):
     def __init__(self, x, y, color, width, height):
         super().__init__(x, y, color, width, height)
 
+    @staticmethod
+    def get_entity_identifier():
+        return 0
+
     def on_tick(self, game):
         pass
 
