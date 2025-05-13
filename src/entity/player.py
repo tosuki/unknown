@@ -39,4 +39,4 @@ class Player(Entity):
         self._handle_keys_pressed(game)
 
     def draw(self, ctx, drawer):
-        return drawer.draw_frame(ctx, self)
+        return drawer.draw_rectangle(ctx, self)
