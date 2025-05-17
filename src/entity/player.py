@@ -15,12 +15,34 @@ class Player(Entity):
         )
 
     def move_up(self, game):
+        _, y = game.ctx.get_position(self.x, self.y)
+
+        if y <= game.frame.y:
+            return
+
         self.y = self.y - self.attributes.speed
     def move_down(self, game):
+        _, y = game.ctx.get_position(self.x, self.y)
+
+        if y+self.height >= game.frame.y+game.frame.height:
+            return
+    
         self.y = self.y + self.attributes.speed
+
     def move_left(self, game):
+        x, _ = game.ctx.get_position(self.x, self.y)
+
+        if x <= game.frame.x:
+            return
+
         self.x = self.x - self.attributes.speed
+
     def move_right(self, game):
+        x, _ = game.ctx.get_position(self.x, self.y)
+
+        if x + self.width >= game.frame.x + game.frame.width:
+            return
+
         self.x = self.x + self.attributes.speed
 
     def _handle_keys_pressed(self, game):
