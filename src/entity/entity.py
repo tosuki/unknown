@@ -18,9 +18,9 @@ class Entity(Drawable):
         return drawer.draw_rectangle(ctx, self)
     
 class ImageEntity(Entity):
-    def __init__(self, sprites, x, y, color, width, height):
+    def __init__(self, image, x, y, color, width, height):
         super().__init__(x, y, color, width, height)
-        self.sprites = sprites
+        self.image = image
 
     def draw(self, ctx, drawer):
         return drawer.draw_image(ctx, self)
